@@ -47,7 +47,9 @@ console.log(newArray.length);             // 4 (тк четыре элемент
 // spread - оператор копирования значения другого массива
 const firstArray = new Array(1, 2, 3, 4);
 // (!) При присваивании массиву другой массив, копируется ссылка на него, а не его значения
-const secondArray = firstArray;         // Присваивает ссылку на значение исходного массива. При изменении secondArray будет изменятся и firstArray 
+const secondArray = firstArray;         // Присваивает ссылку на значение исходного массива.
+// При изменении secondArray будет изменятся и firstArray
+ 
 // Для того чтобы скопировать значение исходного массива, а не его ссылку, используется spread-оператор
 const thirdArray = [...firstArray];     // spread-оператор копирует значение исходного массива firstArray
 
@@ -146,7 +148,7 @@ let party = ['Solo', 'Dread', 'NS', 'Nexus'];
 console.log(party.sort);                         // ['Dread', 'NS', 'Nexus','Solo']; - в алфавитном порядке 
 // (!) для сортировки можно использовать стрелочную функцию
 let newArray = [1, 4, 3, 9, 6]
-console.log(newArray.sort((a, b) => a -b));                         // ['Dread', 'NS', 'Nexus','Solo']; - в алфавитном порядке
+console.log(newArray.sort((a, b) => a - b));                         // [1, 3, 4, 6, 9]; - в алфавитном порядке
 
 // Метод revers - меняет порядок в массиве на обратный
 let party = ['Solo', 'Dread', 'NS', 'Nexus'];
@@ -156,7 +158,7 @@ console.log(party.reverse);                         // ['Nexus', 'NS','Dread', '
 // party.map((элемент массива, индекс, сам массив) => {});
 let party = ['Solo', 'Dread', 'NS', 'Nexus'];
 let newArray = party.map(item => item[0]);          // возвращает первую букву (0(нулевой) индекс) каждого элемента массива
-console.log(newArray);                              // ['S', 'D', 'N', 'N']; - в алфавитном порядке
+console.log(newArray);                              // ['S', 'D', 'N', 'N']; 
 
 // Методы split и join 
 // split("") - преобразует строку в массив по заданному разделителю
@@ -170,9 +172,9 @@ let arraуParty = stringParty.split(',', 2)       // Запятая "," явля
 console.log(arraуParty);                         // ['Solo', 'Dread']
 
 // join("") - преобразует массив в строку с заданным разделителем
-let arraуParty = 'Solo, Dread, Nexus';           // Строка из слов разделенных друг от друга запятой
+let arraуParty = ["Solo", "Dread", "Nexus"];           // Строка из слов разделенных друг от друга запятой
 let stringParty = arraуParty.join(';')           // Точка с запятой ";" является разедлителем
-console.log(arraуParty);                         // ['Solo, Dread, Nexus']
+console.log(arraуParty);                         // 'Solo, Dread, Nexus'
 
 // 9.Проверка
 // (!) массив не является отдельным типом данных. значит typeof выдаст тип object
@@ -206,9 +208,9 @@ party.forEach((item, index, array) => {
 
 
 // 11. Метод filter - позволяет фильтровать по заданному условию исходный массив
-// ToDo: отфильтровать массив и оставить только обьекты где возраст равен 22
 // party.filter(function(элемент массива, индекс, сам массив)) {})
 
+// ToDo: отфильтровать массив и оставить только обьекты где возраст равен 22
 let party = [
     {name: 'Dread', age: 18},
     {name: 'Solo', age: 22},
